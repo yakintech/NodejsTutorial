@@ -1,7 +1,8 @@
 var http = require('http');
 var fs = require('fs');
+
 http.createServer(function (req, res) {
-  fs.readFile('index2.html', function(err, data) {
+  fs.readFile('index.html', function(err, data) {
     if(err != null){
       res.writeHead(500, {'Content-Type': 'text/plain'});
       res.write("HATA!!!!");
