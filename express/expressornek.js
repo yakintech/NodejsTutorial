@@ -42,6 +42,8 @@ app.get('/api/kategoriler',function(req,res){
 
 app.listen(3001);
 
+//https://startbootstrap.com/themes/clean-blog/
+
 
 
 
