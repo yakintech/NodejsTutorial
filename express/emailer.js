@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
  
 app.post('/signup',function(req,res){
-    var email = req.query.email;
+    var email = req.body.email;
     var code = "568253";
 
     SendActivicationCode(email,code);
