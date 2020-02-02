@@ -1,6 +1,12 @@
 var nodemailer = require('nodemailer');
 const express = require('express')
 const app = express()
+var bodyParser = require('body-parser')
+
+var app = express()
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
  
 app.post('/signup',function(req,res){
     var email = req.query.email;
