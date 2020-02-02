@@ -1,21 +1,41 @@
 var nodemailer = require('nodemailer');
 const express = require('express')
 const app = express()
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var _ = require('is_js');
 
-var app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
- 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
 app.post('/signup',function(req,res){
+
+  if(_.not.empty(req.body.email) && _.not.empty(req.body.username) && _.not.empty(req.body.password) && _.email(req.body.email)){
+
     var email = req.body.email;
     var code = "568253";
 
     SendActivicationCode(email,code);
 
     res.status(200).send("EMail başarılı");
+  }
+  else{
+    res.status(422).send("eksik parametre");
+
+  }
+  
+
 });
+
+app.post('/login',function(){
+
+})
 
 
 
