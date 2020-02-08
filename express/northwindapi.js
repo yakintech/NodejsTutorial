@@ -13,6 +13,10 @@ app.get('/kategoriler',function(req,res){
     })
 });
 
+//urunler sayfası
+//tedarikciler sayfası
+
+
 app.listen(3001);
 
 
