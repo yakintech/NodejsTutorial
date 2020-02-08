@@ -12,6 +12,8 @@ app.get('/kategoriler', function (req, res) {
         }
     })
 });
+//4LJvJqSnapF1989C
+//dbadmin
 
 app.get('/urunler', function (req, res) {
     apirequest.get('https://northwind.now.sh/api/products', function (err, r, body) {
@@ -32,15 +34,12 @@ app.get('/tedarikciler', function (req, res) {
 });
 
 app.get('/tedarikciler/:id', (req, res) => {
-
     var id = req.params.id;
 
     apirequest.get('https://northwind.now.sh/api/suppliers/' + id, function(err,r,body){
         res.json(JSON.parse(body));
     })
-
 })
-
 
 app.listen(3001);
 
